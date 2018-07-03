@@ -18,7 +18,7 @@ class MenuViewController: UIViewController , UITableViewDelegate,UITableViewData
         super.viewDidLoad()
 
         menuNameArr = ["Pedidos","Inicio" ,"Cerrar Sesion"]
-        menuImgArr = [UIImage(named: "ic_pedido")!,UIImage(named: "ic_selec")!]
+        menuImgArr = [UIImage(named: "ic_pedido")!,UIImage(named: "ic_selec")!,UIImage(named: "ic_selec")!]
         
     }
 
@@ -34,7 +34,7 @@ class MenuViewController: UIViewController , UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell") as! MenuTableViewCell
-       // cell.lblImageIcon.image = UIImageView[indexPath.row]
+        cell.lblImageIcon.image = menuImgArr[indexPath.row]
         cell.lblTextIcon.text! = menuNameArr[indexPath.row]
         return cell
         
