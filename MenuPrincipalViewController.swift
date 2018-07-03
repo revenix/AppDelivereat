@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AlamofireImage
 
 class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate{
     
@@ -79,10 +80,16 @@ class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,
         let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "Celda", for: indexPath) as! ProductsCVCell
         let lista = listado[indexPath.row]
         
+        
         celda.txtNombre.text = lista["nombre"] as? String
         
         celda.txtPrecio.text =  lista["precio"] as? String
-      //  celda.imgProduct.image = productsImages[indexPath.item]
+        let img = lista["imagen"] as? String
+        
+        let imgURL = URL(string: img! )
+        celda.imgProduct.af_setImage(withURL: imgURL!)
+            
+        
         
         return celda
     }
