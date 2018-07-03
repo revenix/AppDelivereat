@@ -39,9 +39,11 @@ class LoginViewController: UIViewController {
                     self.mostrardialogo(titulo: "Error", mensaje: "error en el servicio")
                 case .success(let value):
                     if(resultado.response?.statusCode == 200){
+                        //validar el login
+                self.performSegue(withIdentifier: "seguePrincipal", sender: self)
+                          // self.mostrardialogo(titulo: "AVISO", mensaje: "Correcto")
                         
-                       // self.performSegue(withIdentifier: "segueIrMenu", sender: self)
-                           self.mostrardialogo(titulo: "AVISO", mensaje: "Correcto")
+                        
                     }else{
                         self.mostrardialogo(titulo: "Error", mensaje: "Correo o Clave Incorrecto")
                         

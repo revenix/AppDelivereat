@@ -24,6 +24,7 @@
                                 <state key="normal" title="Ingresar"/>
                                 <connections>
                                     <action selector="btnIngresar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXD-rd-HpJ"/>
+                                    <segue destination="FV3-Mn-kM2" kind="show" id="HWx-vh-HYi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn3-9t-o8b">
@@ -60,6 +61,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--Menu Principal View Controller-->
+        <scene sceneID="5kl-WF-kFC">
+            <objects>
+                <viewController id="FV3-Mn-kM2" customClass="MenuPrincipalViewController" customModule="AppDelivereat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cA7-ir-aEz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AZO-D6-RvY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6ix-dh-Nxh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DG2-VL-O5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095" y="118"/>
         </scene>
         <!--Registrese View Controller-->
         <scene sceneID="h4q-4T-whN">
