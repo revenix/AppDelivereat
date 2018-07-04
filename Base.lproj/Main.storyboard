@@ -28,7 +28,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnIngresar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXD-rd-HpJ"/>
-                                    <segue destination="FV3-Mn-kM2" kind="show" id="HWx-vh-HYi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn3-9t-o8b">
@@ -90,6 +89,7 @@
                     <connections>
                         <outlet property="txtPassword" destination="1f1-ae-uob" id="4BS-YN-qRj"/>
                         <outlet property="txtUser" destination="wEc-so-EWr" id="yrO-sO-kk8"/>
+                        <segue destination="FV3-Mn-kM2" kind="show" identifier="segueLogin" id="in5-dY-TkJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -341,6 +341,7 @@
                                         <connections>
                                             <outlet property="lblImageIcon" destination="jeP-TD-uV8" id="f4A-A0-xlH"/>
                                             <outlet property="lblTextIcon" destination="FJr-Uz-kF0" id="iRx-JW-VyP"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="g2i-Id-jDW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

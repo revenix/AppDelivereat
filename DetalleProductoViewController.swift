@@ -49,24 +49,12 @@ class DetalleProductoViewController: UIViewController,UITableViewDelegate,UITabl
         let url = "https://fakebucks.azurewebsites.net/api/products/id"
         let parametros:Parameters = ["id":id_producto]
         
+      //  var producto=[Producto]()
+        
         request(url, method: .post, parameters: parametros, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler:{(resultado) in
             print(resultado)
-           
-          //celda.txtNombre.text = "dato del json"
-         
         })
-       
-       // celda.txtNombre.text = lista["nombre"] as? String
-    /*
-       celda.txtNombre.text = lista["nombre"] as? String
-        celda.txtDescripcion.text = lista["descripcion"] as? String
-        celda.txtPrecio.text = lista["precio"] as? String
-        
-        let img = lista["imagen"] as? String
-        
-        let imgURL = URL(string: img! )
-        ImagenProducto.af_setImage(withURL: imgURL!)
-        */
+    
         return celda
         
     }

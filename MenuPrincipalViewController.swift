@@ -76,16 +76,24 @@ class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,
         let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "Celda", for: indexPath) as! ProductsCVCell
         let lista = listado[indexPath.row]
         id = lista["_id"] as! String
+        
+        
         celda.txtNombre.text = lista["nombre"] as? String
         celda.txtPrecio.text =  lista["precio"] as? String
         let img = lista["imagen"] as? String
         let imgURL = URL(string: img! )
+        
+        
         celda.imgProduct.af_setImage(withURL: imgURL!)
+        
+        
+        
         return celda
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detalle = segue.destination as! DetalleProductoViewController
+    
         detalle.id_producto = id
         //performSegue(withIdentifier: "segueDetalle", sender: self)
         

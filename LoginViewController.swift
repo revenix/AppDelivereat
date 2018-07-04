@@ -40,13 +40,11 @@ class LoginViewController: UIViewController {
                 case .success(let value):
                     if(resultado.response?.statusCode == 200){
                         //validar el login
-                self.performSegue(withIdentifier: "seguePrincipal", sender: self)
+                     self.performSegue(withIdentifier: "segueLogin", sender: self)
                           // self.mostrardialogo(titulo: "AVISO", mensaje: "Correcto")
-                        
-                        
-                    }else{
+                    }
+                    if (resultado.response?.statusCode == 401){
                         self.mostrardialogo(titulo: "Error", mensaje: "Correo o Clave Incorrecto")
-                        
                     }
                     
                 }
