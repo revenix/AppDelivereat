@@ -13,7 +13,6 @@ class ProductsCVCell: UICollectionViewCell {
     @IBOutlet weak var imgProduct: UIImageView!
     @IBOutlet weak var txtNombre: UILabel!
     @IBOutlet weak var txtPrecio: UILabel!
-    
-    
+   
     
 }

@@ -18,6 +18,8 @@ class PedidoViewController: UIViewController {
         btMenu.target = revealViewController()
         btMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         
+        costumizeNavBar()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +27,28 @@ class PedidoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func costumizeNavBar(){
+        
+        navigationController?.navigationBar.tintColor = UIColor(displayP3Red: 193/255, green:     151/255, blue: 94/255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 30/255, green: 32/255, blue: 39/255, alpha: 1)
+        
+        
+        let navController = navigationController!
+        
+        let image = UIImage(named: "ic_logo_cabecera.png") //Your logo url here
+        let imageView = UIImageView(image: image)
+        
+        let bannerWidth = navController.navigationBar.frame.size.width
+        let bannerHeight = navController.navigationBar.frame.size.height
+        
+        let bannerX = bannerWidth / 1 - (image?.size.width)! / 1
+        let bannerY = bannerHeight / 1 - (image?.size.height)! / 1
+        
+        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
+        imageView.contentMode = .scaleAspectFit
+        
+        navigationItem.titleView = imageView
+    }
     /*
     // MARK: - Navigation
 

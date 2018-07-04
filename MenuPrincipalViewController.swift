@@ -26,6 +26,9 @@ class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        costumizeNavBar()
+        
+       
         CollectionView.dataSource = self
         CollectionView.delegate = self
         
@@ -86,6 +89,29 @@ class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,
         detalle.id_producto = id
         //performSegue(withIdentifier: "segueDetalle", sender: self)
         
+    }
+    
+    func costumizeNavBar(){
+        
+        navigationController?.navigationBar.tintColor = UIColor(displayP3Red: 193/255, green:     151/255, blue: 94/255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 30/255, green: 32/255, blue: 39/255, alpha: 1)
+        
+        
+        let navController = navigationController!
+        
+        let image = UIImage(named: "ic_logo_cabecera.png") //Your logo url here
+        let imageView = UIImageView(image: image)
+        /*
+        let bannerWidth = navController.navigationBar.frame.size.width
+        let bannerHeight = navController.navigationBar.frame.size.height
+        
+        let bannerX = bannerWidth / 2 - (image?.size.width)! / 2
+        let bannerY = bannerHeight / 2 - (image?.size.height)! / 2
+ 
+        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)*/
+        imageView.contentMode = .scaleToFill
+        
+        navigationItem.titleView = imageView
     }
 
 }

@@ -17,6 +17,9 @@ class MenuViewController: UIViewController , UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "menu_bg.jpg")!)
+        
+        
         menuNameArr = ["Pedidos","Inicio" ,"Cerrar Sesion"]
         menuImgArr = [UIImage(named: "ic_pedido")!,UIImage(named: "ic_selec")!,UIImage(named: "ic_selec")!]
         
