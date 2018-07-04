@@ -18,17 +18,10 @@ class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,
     
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
     
-   
+    var id:String = ""
     
     var listado = [[String : AnyObject]]()
     
-    
-    let products = ["foto 1","foto 2","foto 3","foto 4"]
-    let productsImages : [UIImage] = [UIImage(named: "ic_pedido")!,
-                                      UIImage(named: "ic_pedido")!,
-                                      UIImage(named: "ic_pedido")!,
-                                      UIImage(named: "ic_pedido")!
-                                      ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +45,7 @@ class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,
         request(url).validate().responseJSON{(response) in
             if((response.result.value) != nil){
                 let jsondata = JSON(response.result.value!)
-                print(jsondata)
+               // print(jsondata)
                 if let da = jsondata["result"].arrayObject{
                     self.listado = da as! [[String:AnyObject]]
                     
@@ -79,19 +72,20 @@ class MenuPrincipalViewController: UIViewController ,UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celda = collectionView.dequeueReusableCell(withReuseIdentifier: "Celda", for: indexPath) as! ProductsCVCell
         let lista = listado[indexPath.row]
-        
-        
+        id = lista["_id"] as! String
         celda.txtNombre.text = lista["nombre"] as? String
-        
         celda.txtPrecio.text =  lista["precio"] as? String
         let img = lista["imagen"] as? String
-        
         let imgURL = URL(string: img! )
         celda.imgProduct.af_setImage(withURL: imgURL!)
-            
-        
-        
         return celda
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detalle = segue.destination as! DetalleProductoViewController
+        detalle.id_producto = id
+        //performSegue(withIdentifier: "segueDetalle", sender: self)
+        
     }
 
 }

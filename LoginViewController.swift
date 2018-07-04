@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "menu_bg.jpg")!)
         // Do any additional setup after loading the view.
     }
     @IBAction func btnIngresar(_ sender: Any) {
